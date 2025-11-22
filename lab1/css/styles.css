@@ -1,0 +1,106 @@
+/* Общие настройки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito';
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffb703;
+    padding: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #222;
+}
+
+/* Навигация */
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* Основное содержимое */
+main {
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #e76f51;
+    margin-bottom: 15px;
+}
+
+/* О компании */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 600px;
+    height: auto;
+    align-items: center;
+}
+
+/* Преимущества */
+ul {
+    list-style: disc inside;
+    font-size: 1.1em;
+    color: #444;
+}
+
+/* Таблица популярных блюд */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4a261;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf2e9;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    color: #ffb703;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
