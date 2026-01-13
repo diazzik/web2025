@@ -1,0 +1,40 @@
+.hero-section {
+    background: linear-gradient(135deg, #fdf2e9 0%, #fff 100%);
+}
+
+.feature-icon {
+    font-size: 3rem;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
+}
+
+.contact-section .card {
+    border-radius: 15px;
+}
+
+.navbar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-warning {
+    background-color: #ffb703;
+    border-color: #ffb703;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #fb8500;
+    border-color: #fb8500;
+    transform: scale(1.05);
+}

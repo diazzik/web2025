@@ -1,0 +1,487 @@
+.orders-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.orders-section h2 {
+    font-size: 2em;
+    color: #e76f51;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.loading, .no-orders, .error-message {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.loading p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.no-orders a {
+    color: tomato;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.no-orders a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #4CAF50;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.order-number {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #333;
+}
+
+.order-date {
+    color: #666;
+    font-size: 0.95em;
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.order-content {
+    margin-bottom: 20px;
+}
+
+.order-dishes, .order-customer, .order-address {
+    margin-bottom: 8px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.order-dishes strong, .order-customer strong, .order-address strong {
+    color: #333;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.order-price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+.order-delivery-time {
+    color: #555;
+    font-style: italic;
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.order-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #666;
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.order-action-btn:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.bi-eye {
+    color: #2196F3;
+}
+
+.bi-pencil {
+    color: #FF9800;
+}
+
+.bi-trash {
+    color: #F44336;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3 {
+    color: #e76f51;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #f0f0f0;
+    font-size: 1.8em;
+}
+
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+#modal-order-details {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 5px solid tomato;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-weight: 700;
+    min-width: 180px;
+    color: #333;
+    font-size: 1.05em;
+}
+
+.detail-value {
+    color: #555;
+    flex: 1;
+    font-size: 1.05em;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.edit-form label {
+    font-weight: 700;
+    color: #444;
+    margin-top: 5px;
+    display: block;
+}
+
+.edit-form input, .edit-form textarea, .edit-form select {
+    padding: 14px 16px;
+    font-size: 1.05em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    transition: border-color 0.2s;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.edit-form input:focus, .edit-form textarea:focus {
+    outline: none;
+    border-color: tomato;
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+}
+
+.radio-title {
+    margin-top: 15px;
+    font-weight: 700;
+    color: #444;
+    font-size: 1.05em;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 1.05em;
+}
+
+.radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid #eee;
+}
+
+.modal-buttons button {
+    padding: 14px 30px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    min-width: 120px;
+}
+
+.modal-ok-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-ok-btn:hover {
+    background-color: #388E3C;
+    transform: translateY(-2px);
+}
+
+.modal-cancel-btn {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.modal-cancel-btn:hover {
+    background-color: #ddd;
+    transform: translateY(-2px);
+}
+
+.modal-save-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.modal-save-btn:hover {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+}
+
+.modal-delete-btn {
+    background-color: #F44336;
+    color: white;
+}
+
+.modal-delete-btn:hover {
+    background-color: #D32F2F;
+    transform: translateY(-2px);
+}
+
+.modal-delete-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.alert-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 35px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+    animation: alertFadeIn 0.3s;
+}
+
+@keyframes alertFadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.alert-modal p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.alert-modal button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: tomato;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.alert-modal button:hover {
+    background: #fff;
+    color: tomato;
+    border: 2px solid tomato;
+}
+
+@media (max-width: 768px) {
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .order-info {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .order-actions {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .detail-label {
+        min-width: auto;
+        margin-bottom: 5px;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+    
+    .modal-buttons button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-item {
+        padding: 15px;
+    }
+    
+    .order-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .modal-content {
+        padding: 15px;
+    }
+    
+    .modal-content h3 {
+        font-size: 1.5em;
+    }
+}

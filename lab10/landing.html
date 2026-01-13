@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Lunch — Доставка бизнес-ланчей в Москве</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/landing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="landing.html">Business Lunch</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lunch.html">Собрать ланч</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="orders.html">Заказы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Вкусные бизнес-ланчи с доставкой за 30 минут</h1>
+                    <p class="lead mb-4">Свежие, полезные и сбалансированные обеды прямо в офис. Закажите сейчас и получите скидку 10% на первый заказ!</p>
+                    <a href="lunch.html" class="btn btn-warning btn-lg px-4 py-3 fw-bold">Собрать ланч →</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://avatars.mds.yandex.net/i?id=249bda7ee7d6b8973802cd890ed42a64_l-4809712-images-thumbs&n=13" 
+                         alt="Вкусный обед" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section py-5 bg-warning">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Попробуйте наш бизнес-ланч уже сегодня!</h2>
+            <p class="lead mb-4">Более 1000 компаний в Москве доверяют нам свои обеды. Присоединяйтесь!</p>
+            <a href="lunch.html" class="btn btn-dark btn-lg px-5 py-3 fw-bold">Начать заказ →</a>
+        </div>
+    </section>
+
+    <section class="features py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Почему выбирают нас?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="card-body">
+                            <div class="feature-icon mb-3">🚚</div>
+                            <h4 class="card-title">Быстрая доставка</h4>
+                            <p class="card-text">Доставляем заказы в течение 30 минут по Москве. Гарантируем свежесть и температуру блюд.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="card-body">
+                            <div class="feature-icon mb-3">🍲</div>
+                            <h4 class="card-title">Свежие ингредиенты</h4>
+                            <p class="card-text">Готовим только из свежих продуктов. Меню обновляется ежедневно, есть вегетарианские опции.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm text-center p-4">
+                        <div class="card-body">
+                            <div class="feature-icon mb-3">💰</div>
+                            <h4 class="card-title">Выгодные цены</h4>
+                            <p class="card-text">Стоимость ланча от 350 ₽. Скидки для корпоративных клиентов и при регулярных заказах.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="contact-section py-5" id="contacts">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold">Свяжитесь с нами</h2>
+            <div class="row g-5">
+                <!-- Форма -->
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 p-4">
+                        <h4 class="mb-4">Оставьте заявку</h4>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label class="form-label">Имя</label>
+                                <input type="text" class="form-control" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="example@mail.ru" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Сообщение</label>
+                                <textarea class="form-control" rows="4" placeholder="Ваш вопрос или комментарий"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100 py-3 fw-bold">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0 p-4 h-100">
+                        <h4 class="mb-4">Наши контакты</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <strong>Email:</strong> 
+                                <a href="mailto:info@businesslunch.ru" class="text-decoration-none">info@businesslunch.ru</a>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Телефон:</strong> 
+                                <a href="tel:+74951234567" class="text-decoration-none">+7 (495) 123-45-67</a>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Адрес:</strong> Москва, ул. Примерная, д. 10
+                            </li>
+                            <li class="mb-3">
+                                <strong>Время работы:</strong> Пн–Вс: 7:00–23:00
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <h5>Мы в соцсетях</h5>
+                            <div class="d-flex gap-3 mt-3">
+                                <a href="#" class="btn btn-outline-dark">Telegram</a>
+                                <a href="#" class="btn btn-outline-dark">VK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">© 2025 Business Lunch, Москва. Все права защищены.</p>
+            <p class="small mt-2">
+                <a href="index.html" class="text-warning text-decoration-none me-3">О нас</a> |
+                <a href="lunch.html" class="text-warning text-decoration-none mx-3">Собрать ланч</a> |
+                <a href="order.html" class="text-warning text-decoration-none mx-3">Оформить заказ</a> |
+                <a href="orders.html" class="text-warning text-decoration-none ms-3">Заказы</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Кастомный JS для формы (опционально) -->
+    <script src="js/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* css/order.css - ДОПОЛНЕННАЯ ВЕРСИЯ */
+
+/* Основные стили для страницы заказа */
+.order-summary-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.order-form-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Стили для пустого заказа */
+.empty-order {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px dashed #ddd;
+}
+
+.empty-order a {
+    color: tomato;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-order a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для сетки блюд в заказе */
+#order-items-container.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Карточка блюда в заказе */
+#order-items-container .dish-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+#order-items-container .dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Кнопка удаления */
+.delete-btn {
+    background-color: #ff6b6b !important;
+    color: white !important;
+    border: none !important;
+    margin-top: 10px;
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #ff5252 !important;
+}
+
+/* Форма заказа */
+.order-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.order-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.order-block h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #e76f51;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.order-selection {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid tomato;
+}
+
+.order-selection div {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-selection div:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.order-selection strong {
+    color: #333;
+    display: inline-block;
+    min-width: 140px;
+}
+
+#order-total {
+    margin-top: 15px;
+    font-size: 1.3em;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Стили формы */
+label {
+    font-weight: 600;
+    color: #444;
+    margin-top: 10px;
+}
+
+input, textarea, select {
+    padding: 12px 14px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: tomato;
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+}
+
+.checkbox, .radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.radio-title {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Кнопки формы */
+.form-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.reset-btn, .submit-btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.reset-btn {
+    background: #f0f0f0;
+    color: #555;
+}
+
+.reset-btn:hover {
+    background: #ddd;
+}
+
+.submit-btn {
+    background: tomato;
+    color: white;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: #c9381a;
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #c62828;
+    font-size: 0.95em;
+}
+
+/* Стили для изображений блюд в заказе */
+#order-items-container .dish-card img {
+    width: 100%;
+    height: 180px; /* Фиксированная высота */
+    object-fit: cover; /* Сохраняет пропорции, обрезая лишнее */
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .order-form {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #order-items-container.menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .order-summary-section,
+    .order-form-section {
+        padding: 15px;
+    }
+}
+
+
