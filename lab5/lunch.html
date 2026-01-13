@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч — Business Lunch</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/lunch.css">
+</head>
+<body>
+
+<header>
+    <h1>Собрать ланч</h1>
+    <nav>
+        <a href="index.html">О нас</a>
+        <a id="active" href="lunch.html">Собрать ланч</a>
+        <a href="#">Заказы</a>
+        <a href="index.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Выберите суп</h2>
+        <div class="filters" id="filters-soup">
+            <button data-kind="fish">Рыбный</button>
+            <button data-kind="meat">Мясной</button>
+            <button data-kind="veg">Вегетарианский</button>
+        </div>
+        <div class="menu-grid" id="soups"></div>
+    </section>
+
+    <section>
+        <h2>Выберите главное блюдо</h2>
+        <div class="filters" id="filters-main">
+            <button data-kind="fish">Рыбное</button>
+            <button data-kind="meat">Мясное</button>
+            <button data-kind="veg">Вегетарианское</button>
+        </div>
+        <div class="menu-grid" id="main"></div>
+    </section>
+
+    <section>
+        <h2>Выберите напиток</h2>
+        <div class="filters" id="filters-drink">
+            <button data-kind="cold">Холодный</button>
+            <button data-kind="hot">Горячий</button>
+        </div>
+        <div class="menu-grid" id="drinks"></div>
+    </section>
+
+    <section>
+        <h2>Выберите салат или стартер</h2>
+        <div class="filters" id="filters-salad">
+            <button data-kind="fish">Рыбный</button>
+            <button data-kind="meat">Мясной</button>
+            <button data-kind="veg">Вегетарианский</button>
+        </div>
+        <div class="menu-grid" id="salads"></div>
+    </section> 
+
+    <section>
+        <h2>Выберите десерт</h2>
+        <div class="filters" id="filters-dessert">
+            <button data-kind="small">Маленькая порция</button>
+            <button data-kind="medium">Средняя порция</button>
+            <button data-kind="big">Большая порция</button>
+        </div>
+        <div class="menu-grid" id="desserts"></div>
+    </section>
+
+
+</main>
+
+<section class="order-section">
+    <h2>Оформить заказ</h2>
+
+    <form action="https://httpbin.org/post" method="POST" class="order-form">
+
+        <div class="order-block">
+            <h3>Ваш заказ</h3>
+
+            <div class="order-selection">
+
+                <div class="order-category" id="order-soup">
+                    <strong class="cat-title" id="title-soup" style="display:none">Суп:</strong>
+                    <p class="cat-content" id="content-soup">Ничего не выбрано</p>
+                </div>
+
+                <div class="order-category" id="order-main">
+                    <strong class="cat-title" id="title-main" style="display:none">Главное блюдо:</strong>
+                    <p class="cat-content" id="content-main">Ничего не выбрано</p>
+                </div>
+
+                <div class="order-category" id="order-drink">
+                    <strong class="cat-title" id="title-drink" style="display:none">Напиток:</strong>
+                    <p class="cat-content" id="content-drink">Ничего не выбрано</p>
+                </div>
+
+                <div class="order-category" id="order-salad">
+                    <strong class="cat-title" id="title-salad" style="display:none">Салат или стартер:</strong>
+                    <p class="cat-content" id="content-salad"></p>
+                </div>
+
+                <div class="order-category" id="order-dessert">
+                    <strong class="cat-title" id="title-dessert" style="display:none">Десерт:</strong>
+                    <p class="cat-content" id="content-dessert"></p>
+                </div>
+
+            </div>
+
+            <!-- <input type="hidden" name="soup" id="input-soup" value="">
+            <input type="hidden" name="main" id="input-main" value="">
+            <input type="hidden" name="drink" id="input-drink" value=""> -->
+            <input type="hidden" id="input-soup" name="soup">
+            <input type="hidden" id="input-main" name="main">
+            <input type="hidden" id="input-drink" name="drink">
+            <input type="hidden" id="input-salad" name="salad">
+            <input type="hidden" id="input-dessert" name="dessert">
+
+            <div id="order-total" style="margin-top:12px; font-weight:700; display:none;">Стоимость заказа: 0 ₽</div>
+            
+            <label for="comment">Комментарий</label>
+            <textarea id="comment" name="comment" rows="4"></textarea>
+        </div>
+
+        <div class="order-block">
+            <h3>Данные клиента</h3>
+
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+
+            <label class="checkbox">
+                <input type="checkbox" name="subscribe" checked>
+                Хочу получать рассылку
+            </label>
+
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" required>
+
+            <label for="address">Адрес доставки</label>
+            <input id="address" name="address" type="text" required>
+
+            <p class="radio-title">Выберите тип времени доставки:</p>
+
+            <label class="radio">
+                <input type="radio" name="delivery-type" value="exact" required>
+                Точное время
+            </label>
+            <label class="radio">
+                <input type="radio" name="delivery-type" value="fast" required>
+                Как можно скорее
+            </label>
+
+            <label for="time">Время доставки</label>
+            <input id="time" name="time" type="time" min="07:00" max="23:00" step="300">
+
+            <div class="form-buttons">
+                <button type="reset" class="reset-btn">Сбросить</button>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+
+<footer>
+    <p>Связаться с нами: <a href="mailto:info@businesslunch.ru">info@businesslunch.ru</a></p>
+    <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+    <p>© 2025 Business Lunch</p>
+</footer>
+
+<script src="js/dishes.js"></script>
+<script src="js/render.js"></script>
+<script src="js/order.js"></script>
+<script src="js/filter.js"></script>
+
+</body>
+</html>

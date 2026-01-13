@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito';
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffb703;
+    padding: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: #222;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-size: 1.1em;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#active {
+    color: tomato;
+}
+
+
+nav a:hover {
+    color: #fff;
+}
+
+main {
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #e76f51;
+    margin-bottom: 15px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 600px;
+    height: auto;
+    align-items: center;
+}
+
+ul {
+    list-style: disc inside;
+    font-size: 1.1em;
+    color: #444;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4a261;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf2e9;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    color: #ffb703;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+@media (max-width: 800px) {
+
+    .about img {
+        width: 500px;
+    }
+
+        nav ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    h1 {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: calc(1rem + 4px);
+    }
+
+    .about img {
+        width: 100%;
+    }
+
+    table {
+        font-size: calc(1rem - 2px);
+    }
+}
+
+@media (max-width: 400px) {
+
+    table {
+        font-size: calc(1rem - 4px);
+    }
+}
